@@ -18,5 +18,8 @@ export default defineConfig({
         generator: resolve(__dirname, "generator.html"),
       },
     },
+    modulePreload: {
+      polyfill: false,
+    },
   },
 });
