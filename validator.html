@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPLib WASM Demo - Validator</title>
+  </head>
+  <body>
+    <h1>Validator</h1>
+    <p>
+      <b>Objective:</b> Given an undirected graph with $n$ ($2 \le n \le 1000$) vertices and $m$ ($1
+      \le m \le 1000$) edges, verify its validity. Also check if it is a connected graph and if it
+      is a tree.
+    </p>
+    <div class="wrap">
+      <form class="left" id="form">
+        <textarea
+          name="input"
+          placeholder="n m
+u_1 v_1
+u_2 v_2
+...
+u_m v_m"
+          rows="20"
+        ></textarea>
+        <div>
+          <span>Report format: </span>
+          <select name="report_format">
+            <option value="json">json</option>
+            <option value="colored-text">colored-text</option>
+            <option value="plain-text">plain-text</option>
+          </select>
+        </div>
+        <div>
+          <input type="checkbox" name="do_format" id="do-format" />
+          <label for="do-format">Remove trailing spaces and end-of-text newlines</label>
+        </div>
+        <button type="submit">Run</button>
+      </form>
+      <div class="right">
+        <div>Report:</div>
+        <div id="report"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/validator.ts"></script>
+  </body>
+</html>

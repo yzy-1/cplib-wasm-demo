@@ -1,0 +1,46 @@
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.left {
+  width: 100%;
+  border: 1px black solid;
+  margin-right: 0.5em;
+}
+
+.left textarea {
+  width: 100%;
+  font-family: monospace;
+}
+
+.right {
+  width: 100%;
+  border: 1px black solid;
+  margin-left: 0.5em;
+}
+
+.right textarea {
+  width: 100%;
+  font-family: monospace;
+}
+
+.ansi {
+  font-family: monospace;
+}
+
+#communicate {
+  background: lightgray;
+  width: 100%;
+  font-family: monospace;
+}
+
+#communicate .user-input {
+  color: darkred;
+}
+#communicate pre {
+  display: inline;
+  font-family: monospace;
+}

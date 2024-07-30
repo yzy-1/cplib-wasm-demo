@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPLib WASM Demo - Generator</title>
+  </head>
+  <body>
+    <h1>Generator</h1>
+    <p>
+      <b>Requirements:</b> Implement an input file generator for the integer A+B problem, called
+      with the command <code>./gen [--same] --n-max=&lt;value&gt; --n-min=&lt;value&gt;</code>. The
+      <code>n-min</code> and <code>n-max</code> specify the range of integers $a$ and $b$. The
+      <code>same</code> flag indicates whether to set $a = b$.
+    </p>
+    <div class="wrap">
+      <form class="left" id="form">
+        <label for="n_min">n-min</label>
+        <input type="number" name="n_min" id="n_min" />
+        <br />
+        <label for="n_max">n-max</label>
+        <input type="number" name="n_max" id="n_max" />
+        <br />
+        <label for="same">same</label>
+        <input type="checkbox" name="same" id="same" />
+        <div>
+          <span>Report format: </span>
+          <select name="report_format">
+            <option value="json">json</option>
+            <option value="colored-text">colored-text</option>
+            <option value="plain-text">plain-text</option>
+          </select>
+        </div>
+        <button type="submit">Run</button>
+      </form>
+      <div class="right">
+        <div>Report:</div>
+        <div id="report"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/generator.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPLib WASM Demo - Checker</title>
+  </head>
+  <body>
+    <h1>Checker</h1>
+    <p>
+      <b>Problem Description:</b> Given an undirected connected simple graph with $n$ nodes ($1 \le
+      n \le 100$) and $m$ edges ($1 \le n \le 100$), where the endpoints of the $i$-th edge are
+      $u_i$ and $v_i$ ($1 \le u_i, v_i \le n$), and the edge weight is $w_i$ ($1 \le w_i \le 100$).
+      You need to solve two problems: find the sum of the weights of the shortest path from $1$ to
+      $n$, and output any one shortest path.
+    </p>
+    <p>
+      <b>Input Format:</b> The first line contains two integers $n$ and $m$. Next, there are $m$
+      lines, each containing three integers $u_i,v_i,w_i$.
+    </p>
+    <p>
+      <b>Output Format:</b> The first line outputs an integer $\mathit{sum}$, representing the
+      answer to the first problem. The second line first outputs an integer $\mathit{len}$ in the
+      range $[1,n^2]$, representing the number of nodes traversed in the shortest path. Then it
+      outputs $\mathit{len}$ integers, representing the node numbers traversed in the shortest path
+      (including the starting node $1$ and the ending node $n$).
+    </p>
+    <div class="wrap">
+      <form class="left" id="form">
+        <textarea
+          name="inf"
+          placeholder="n m
+u_1 v_1 w_1
+u_2 v_2 w_2
+...
+u_m v_m w_m"
+          rows="10"
+        ></textarea>
+        <textarea name="ouf" placeholder="Output" rows="10"></textarea>
+        <textarea name="ans" placeholder="Answer" rows="10"></textarea>
+        <div>
+          <span>Report format: </span>
+          <select name="report_format">
+            <option value="json">json</option>
+            <option value="colored-text">colored-text</option>
+            <option value="plain-text">plain-text</option>
+          </select>
+        </div>
+        <button type="submit">Run</button>
+      </form>
+      <div class="right">
+        <div>Report:</div>
+        <div id="report"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/checker.ts"></script>
+  </body>
+</html>

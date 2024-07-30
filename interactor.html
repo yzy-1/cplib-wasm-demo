@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPLib WASM Demo - Interactor</title>
+  </head>
+  <body>
+    <h1>Interactor</h1>
+    <p>
+      <b>Problem Description:</b> Given an integer $n$ ($1 \le n \le 10^9$), the interaction library
+      will select an integer $m$ in $[1,n]$, and you should write a program to guess it. You can
+      perform two operations: `Q x`: ask whether the integer $x$ is greater than, less than, or
+      equal to $m$. The interaction library returns a character indicating the answer: `&gt;` if
+      $x&gt;m$, `=` if $x=m$, `&lt;` if $x&lt;m$. This operation cannot be called more than $50$
+      times; `A x`: report that the value of $m$ is $x$, this operation has no return value, and the
+      program must exit immediately after executing this operation.
+    </p>
+    <div class="wrap">
+      <div class="left">
+        <form id="form">
+          <div>
+            <span>n</span>
+            <input type="number" name="n" />
+          </div>
+          <div>
+            <span>m</span>
+            <input type="number" name="m" />
+          </div>
+          <button type="submit">Reset & Run</button>
+        </form>
+        <hr />
+        <form id="line-form">
+          <input type="text" name="line" placeholder="line" />
+          <button type="submit">Send</button>
+        </form>
+        <button id="send-eof" type="button">Send EOF</button>
+      </div>
+      <div class="right">
+        <div>Report:</div>
+        <div id="communicate">
+          <div>Communicate area</div>
+          <div>Black text interactor output</div>
+          <div class="user-input">Red text your input</div>
+        </div>
+        <textarea id="report" rows="10" placeholder="stderr" disabled></textarea>
+      </div>
+    </div>
+    <script type="module" src="/src/interactor.ts"></script>
+  </body>
+</html>
