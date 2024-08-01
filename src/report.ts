@@ -23,8 +23,16 @@ export interface TraceTreeNode {
 }
 
 export interface Report {
-  status: "internal_error" | "valid" | "invalid";
+  status:
+    | "internal_error"
+    | "accepted"
+    | "wrong_answer"
+    | "partially_correct"
+    | "valid"
+    | "invalid"
+    | "ok";
   message: string;
+  score?: number;
   traits?: Record<string, boolean>;
   reader_trace_stack?: TraceStack;
   reader_trace_tree?: TraceTreeNode[];
