@@ -15,15 +15,19 @@
     </p>
     <div class="wrap">
       <form class="left" id="form" onsubmit="return false">
-        <label for="n_min">n-min</label>
-        <input type="number" name="n_min" id="n_min" />
-        <br />
-        <label for="n_max">n-max</label>
-        <input type="number" name="n_max" id="n_max" />
-        <br />
-        <label for="same">same</label>
-        <input type="checkbox" name="same" id="same" />
-        <div>
+        <div class="input-args">
+          <span>n-min</span>
+          <input type="number" name="n_min" id="n_min" />
+        </div>
+        <div class="input-args">
+          <span>n-max</span>
+          <input type="number" name="n_max" id="n_max" />
+        </div>
+        <div class="input-args">
+          <label for="same">same</label>
+          <input type="checkbox" name="same" id="same" />
+        </div>
+        <div class="input-args">
           <span>Report format: </span>
           <select name="report_format">
             <option value="json">json</option>
@@ -31,7 +35,9 @@
             <option value="plain-text">plain-text</option>
           </select>
         </div>
-        <button type="submit">Run</button>
+        <div class="button-group">
+          <button type="submit">Run</button>
+        </div>
       </form>
       <div class="right">
         <div>Report:</div>
