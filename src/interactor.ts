@@ -26,27 +26,27 @@ async function main() {
     communicate_backup.removeChild(communicate_backup.firstChild!);
   }
 
-  function reset() {
+  async function reset() {
+    if (stdin !== null) {
+      await stdin.close();
+      stdin = null;
+    }
+    if (instance !== null) {
+      await instance.wait();
+      instance = null;
+    }
     output.value = "";
     {
       const newNode = communicate_backup.cloneNode();
       communicate.replaceWith(newNode);
       communicate = newNode as HTMLElement;
     }
-    if (stdin !== null) {
-      stdin.close();
-      stdin = null;
-    }
-    if (instance !== null) {
-      instance!.free();
-      instance = null;
-    }
   }
 
   form.onsubmit = async (e: SubmitEvent) => {
     e.preventDefault();
 
-    reset();
+    await reset();
 
     const data = new FormData(form);
     const n = data.get("n")! as unknown as number;
