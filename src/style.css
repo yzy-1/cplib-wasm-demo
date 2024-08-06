@@ -1,3 +1,7 @@
+body {
+  margin: 8px;
+}
+
 :where(button, input, select, textarea) {
   border: 1px solid black;
 }
@@ -10,9 +14,11 @@
 }
 
 .left {
+  padding: 8px;
   width: 100%;
-  border: 1px black solid;
+  /*border: 1px black solid;*/
   margin-right: 0.5em;
+  background: #eee;
 }
 
 .left textarea {
@@ -21,9 +27,11 @@
 }
 
 .right {
+  padding: 8px;
   width: 100%;
-  border: 1px black solid;
+  /*border: 1px black solid;*/
   margin-left: 0.5em;
+  background: #eee;
 }
 
 .right textarea {
@@ -39,12 +47,45 @@
   background: lightgray;
   width: 100%;
   font-family: monospace;
+  padding: 4px;
 }
 
 #communicate .user-input {
-  color: darkred;
+  color: #b31616;
 }
 #communicate pre {
   display: inline;
   font-family: monospace;
+}
+
+#line-form, #line-form > input {
+  width: 100%;
+}
+
+#line-form {
+  margin-bottom: 6px;
+}
+
+button {
+  border-radius: 16px;
+  padding: 4px 12px;
+  border: 0px;
+  background: #c1c1c1;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #aaa;
+}
+
+.button-group {
+  text-align: right;
+}
+
+.input-args {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0px;
 }

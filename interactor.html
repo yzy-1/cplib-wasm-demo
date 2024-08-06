@@ -19,29 +19,33 @@
     <div class="wrap">
       <div class="left">
         <form id="form" onsubmit="return false">
-          <div>
+          <div class="input-args">
             <span>n</span>
             <input type="number" name="n" />
           </div>
-          <div>
+          <div class="input-args">
             <span>m</span>
             <input type="number" name="m" />
           </div>
-          <button type="submit">Reset & Run</button>
+          <div class="button-group">
+            <button type="submit">Reset & Run</button>
+          </div>
         </form>
         <hr />
         <form id="line-form" onsubmit="return false">
           <input type="text" name="line" placeholder="line" />
-          <button type="submit">Send</button>
         </form>
-        <button id="send-eof" type="button">Send EOF</button>
+        <div class="button-group">
+          <button type="submit">Send</button>
+          <button id="send-eof" type="button">Send EOF</button>
+        </div>
       </div>
       <div class="right">
         <div>Report:</div>
         <div id="communicate">
           <div>Communicate area</div>
-          <div>Black text interactor output</div>
-          <div class="user-input">Red text your input</div>
+          <div>Black text: interactor output</div>
+          <div class="user-input">Red text: your input</div>
         </div>
         <textarea id="report" rows="10" placeholder="stderr" disabled></textarea>
       </div>
